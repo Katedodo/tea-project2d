@@ -1,0 +1,16 @@
+<div class="faq-container">
+  <h1 class="text-center my-4">Ответы на часто задаваемые вопросы</h1>
+
+  <ngb-accordion id="faqAccordion" [closeOthers]="true">
+    <ngb-panel *ngFor="let item of faqs; let i = index" [id]="'faq-'+i">
+      <ng-template ngbPanelTitle>
+        {{ item.question }}
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="accordion-body">
+          {{ item.answer }}
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

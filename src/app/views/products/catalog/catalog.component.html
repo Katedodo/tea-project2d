@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="tea-container">
+  <h1 class="text-center my-4 title-tea">Каталог</h1>
+  <div class="row justify-content-center g-0" style="gap: 24px;">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let tea of teas">
+      <div class="card h-100">
+        <img [src]="tea.image" class="card-img-top" alt="tea">
+        <div class="card-body">
+          <h5 class="card-title">{{tea.title}}</h5>
+          <p class="card-text">{{tea.description}}</p>
+          <button class="btn btn-primary w-100" [routerLink]="['/product', tea.id]">
+            Подробнее
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

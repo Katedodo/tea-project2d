@@ -1,0 +1,32 @@
+
+.contact-container {
+  margin-top: 72px;
+  margin-bottom: 42px;
+  padding: 0 16px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 636px;
+  margin: 0 auto;
+}
+
+.button-form {
+  width: 200px;
+  background-color: #14448A;
+}
+
+.alert {
+  width: 100%;
+  max-width: 636px;
+  margin: 0 auto;
+}
+
+
+
+@media (max-width: 576px) {
+  .button-form {
+    width: 100%;
+  }
+}
+
