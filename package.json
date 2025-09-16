@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:prod": "ng build --configuration production --base-href /tea-project/",
+    "deploy": "ng build --configuration production --base-href /tea-project/ && npx angular-cli-ghpages --dir=dist/tea-project/browser"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +34,7 @@
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
     "@types/node": "^16.18.126",
+    "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
