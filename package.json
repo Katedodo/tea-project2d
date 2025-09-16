@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:prod": "ng build --configuration production --base-href /tea-project/",
-    "deploy": "ng build --configuration production --base-href /tea-project/ && npx angular-cli-ghpages --dir=dist/tea-project/browser"
+    "deploy": "ng build --configuration production --base-href /tea-project/ && npx angular-cli-ghpages --dir=dist/tea-project"
+
   },
   "private": true,
   "dependencies": {
