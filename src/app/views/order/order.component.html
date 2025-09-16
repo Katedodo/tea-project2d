@@ -10,14 +10,14 @@
       <div class="mb-3">
         <label class="form-label">Товар</label>
         <input type="text" class="form-control" formControlName="product"
-               [ngClass]="{'is-invalid': submitted && f['product'].invalid}">
+               [ngClass]="{'is-invalid': orderForm.controls['product'].touched && orderForm.controls['product'].errors}">
       </div>
 
       <div class="mb-3">
         <label class="form-label">Имя</label>
         <input type="text" class="form-control" formControlName="name"
-               [ngClass]="{'is-invalid': submitted && f['name'].invalid}">
-        <div class="invalid-feedback" *ngIf="submitted && f['name'].invalid">
+               [ngClass]="{'is-invalid': orderForm.controls['name'].touched && orderForm.controls['name'].errors}">
+        <div class="invalid-feedback" *ngIf="orderForm.controls['name'].touched && orderForm.controls['name'].errors">
           Только буквы. Поле обязательно.
         </div>
       </div>
@@ -25,8 +25,8 @@
       <div class="mb-3">
         <label class="form-label">Фамилия</label>
         <input type="text" class="form-control" formControlName="last_name"
-               [ngClass]="{'is-invalid': submitted && f['last_name'].invalid}">
-        <div class="invalid-feedback" *ngIf="submitted && f['last_name'].invalid">
+               [ngClass]="{'is-invalid': orderForm.controls['last_name'].touched && orderForm.controls['last_name'].errors}">
+        <div class="invalid-feedback" *ngIf="orderForm.controls['last_name'].touched && orderForm.controls['last_name'].errors">
           Только буквы. Поле обязательно.
         </div>
       </div>
@@ -36,43 +36,48 @@
         <input type="tel" class="form-control" formControlName="phone"
                placeholder="+79991234567"
                (keypress)="allowPhoneOnly($event)"
-               [ngClass]="{'is-invalid': submitted && f['phone'].invalid}">
-        <div class="invalid-feedback" *ngIf="submitted && f['phone'].invalid">
-          Допустимы только цифры и знак +, всего 11-15 цифр.
+               [ngClass]="{'is-invalid': orderForm.controls['phone'].touched && orderForm.controls['phone'].errors}">
+        <div class="invalid-feedback" *ngIf="orderForm.controls['phone'].touched && orderForm.controls['phone'].errors">
+          Допустимы только цифры и знак +, всего 11–15 символов.
         </div>
       </div>
+
 
       <div class="mb-3">
         <label class="form-label">Страна</label>
         <input type="text" class="form-control" formControlName="country"
-               [ngClass]="{'is-invalid': submitted && f['country'].invalid}">
-        <div class="invalid-feedback" *ngIf="submitted && f['country'].invalid">
+               [ngClass]="{'is-invalid': orderForm.controls['country'].touched && orderForm.controls['country'].errors}">
+        <div class="invalid-feedback" *ngIf="orderForm.controls['country'].touched && orderForm.controls['country'].errors">
           Поле обязательно.
         </div>
       </div>
+
 
       <div class="mb-3">
         <label class="form-label">Индекс</label>
         <input type="number" class="form-control" formControlName="zip"
-               [ngClass]="{'is-invalid': submitted && f['zip'].invalid}">
-        <div class="invalid-feedback" *ngIf="submitted && f['zip'].invalid">
-          Поле обязательно.
+               [ngClass]="{'is-invalid': orderForm.controls['zip'].touched && orderForm.controls['zip'].errors}">
+        <div class="invalid-feedback" *ngIf="orderForm.controls['zip'].touched && orderForm.controls['zip'].errors">
+          Введите корректный индекс (от 4 до 10 цифр).
         </div>
       </div>
+
 
       <div class="mb-3">
         <label class="form-label">Адрес</label>
         <input type="text" class="form-control" formControlName="address"
-               [ngClass]="{'is-invalid': submitted && f['address'].invalid}">
-        <div class="invalid-feedback" *ngIf="submitted && f['address'].invalid">
+               [ngClass]="{'is-invalid': orderForm.controls['address'].touched && orderForm.controls['address'].errors}">
+        <div class="invalid-feedback" *ngIf="orderForm.controls['address'].touched && orderForm.controls['address'].errors">
           Допустимы буквы, цифры, пробел, дефис и слеш.
         </div>
       </div>
+
 
       <div class="mb-3">
         <label class="form-label">Комментарий к заказу</label>
         <textarea class="form-control" rows="3" formControlName="comment"></textarea>
       </div>
+
 
       <button class="btn btn-success button-form" [disabled]="orderForm.invalid">Оформить заказ</button>
       <span class="text-danger ms-3">{{ errorMessage }}</span>
